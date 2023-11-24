@@ -1,25 +1,26 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Stack, ChakraProvider } from '@chakra-ui/react';
+import { SearchBar } from './components/searchbar';
+import { SearchButton } from './components/searchbutton';
 
 function App() {
   return (
+    <ChakraProvider>
     <div className="App">
       <header className="App-header">
+        <h1>What's the pay?</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Stack direction={'row'} align={'center'}>
+          <SearchBar/>
+          <SearchButton/>
+        </Stack>
       </header>
+      <body>
+      </body>
     </div>
+    </ChakraProvider>
   );
 }
 
